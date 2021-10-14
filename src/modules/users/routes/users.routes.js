@@ -1,11 +1,15 @@
 const { Router } = require("express");
 const users = require("../schemas/user.js");
 
+const ensureAuth = require("../../../shared/middlewares/EnsureAuthenticate");
+
 const UsersController = require("../controllers/UsersController");
 
 const routesUser = Router();
 
-routesUser.get("/findall", UsersController.findAll);
+// routesUser.use(ensureAuth);
+
+routesUser.get("/findall", ensureAuth, UsersController.findAll);
   
 routesUser.get("/findfilter", UsersController.findFilter);
 
