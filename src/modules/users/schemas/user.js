@@ -1,4 +1,4 @@
-const mongoose = require("./database");
+const mongoose = require("../../../shared/database/database");
 const Schema = mongoose.Schema;
 
 const users = new Schema({
