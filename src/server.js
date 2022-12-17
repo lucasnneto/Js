@@ -1,5 +1,7 @@
+require("dotenv").config();
 const express = require("express");
 const routes = require("./shared/routes");
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -8,6 +10,6 @@ app.use(routes);
 
 app.get("/", (request, response) => response.json("hello world"));
 
-app.listen(3000, () => {
-  console.log("Rodando na porta 3000");
+app.listen(port, () => {
+  console.log("Rodando na porta " + port);
 });
