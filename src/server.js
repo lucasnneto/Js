@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(routes);
 
-app.get("/", (request, response) => response.json("hello world"));
+app.get("/", (request, response) => response.json("hello world 2"));
 
 app.listen(port, () => {
   console.log("Rodando na porta " + port);
